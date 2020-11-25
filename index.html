@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      
+    </head>
+    <body>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script>
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyBKoGsG_8mCr2P9W9Qz7VOmtUWbeR-h3rU",
+    authDomain: "fir-tutorial-23d9b.firebaseapp.com",
+    databaseURL: "https://fir-tutorial-23d9b.firebaseio.com",
+    projectId: "fir-tutorial-23d9b",
+    storageBucket: "fir-tutorial-23d9b.appspot.com",
+    messagingSenderId: "864569689188",
+    appId: "1:864569689188:web:52e0aa056c86bfb4e88b71",
+    measurementId: "G-HQS69BKXVR"
+  };
+  // Initialize Firebase    
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  function writeData(){
+      console.log("sasasas");
+      firebase.database().ref("user/"+document.getElementById("user").value).set({
+          name: document.getElementById("user").value,
+          password: document.getElementById("password").value
+      });
+    
+
+  }
+  
+
+
+</script>
+
+<h>
+    Input-Output
+</h>
+<input type="text" id="user" placeholder="enter username">
+<input type="text" id="password" placeholder="enter password">
+
+
+<button onclick="writeData()">
+    Submit
+</button>
+    </body>
+</html>
